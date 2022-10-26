@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Text Editor</title>
+        <!-- bs css and js -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <!--  FAS-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- custom css -->
+        <link rel="stylesheet" href="./style.css" type="text/css">
+</head>
+<body>
+
+        <div class="container border p-5">
+                <h4>Text Editor</h4>
+
+                <div class="row">
+                        <div class="col-md-12">
+
+                                <!-- method 1 -->
+                                <!-- <button type="button" class="btn btn-outline-secondary rounded-0" title="Bold Text" onclick="boldFun();">Bold</button> -->
+                                <!-- <button type="button" class="btn btn-outline-secondary rounded-0" title="Italic Text" onclick="italicFun();">Italic</button> -->
+                                <!-- <button type="button" class="btn btn-outline-secondary rounded-0" title="Underline Text" onclick="underlineFun();">Underline</button> -->
+                                <!-- <button type="button" class="btn btn-outline-secondary rounded-0" title="left Text" onclick="leftFun();"><i class="fas fa-align-left"></i></button> -->
+                                <!-- <button type="button" class="btn btn-outline-secondary rounded-0" title="Center Text" onclick="centerFun();"><i class="fas fa-align-center"></i></button> -->
+                                <!-- <button type="button" class="btn btn-outline-secondary rounded-0" title="Right Text" onclick="rightFun();"><i class="fas fa-align-right"></i></button> -->
+                                <!-- <button type="button" class="btn btn-outline-secondary rounded-0" title="Uppercase Text" onclick="uppercaseFun();">Uppercase</button> -->
+                                <!-- <button type="button" class="btn btn-outline-secondary rounded-0" title="Lowercase Text" onclick="lowercaseFun();">Lowercase</button> -->
+                                <!-- <button type="button" class="btn btn-outline-secondary rounded-0" title="Capitalize Text" onclick="capitalizeFun();">Capitalize</button> -->
+                                <!-- <button type="button" class="btn btn-outline-secondary rounded-0" title="Clear Text" onclick="clearFun();">Clear</button> -->
+
+                                 <!-- method 2 -->
+                                 <button type="button" class="btn btn-outline-secondary rounded-0" title="Bold Text" data-command="bold">Bold</button>
+                                 <button type="button" class="btn btn-outline-secondary rounded-0" title="Italic Text" data-command="italic">Italic</button>
+                                 <button type="button" class="btn btn-outline-secondary rounded-0" title="Underline Text" data-command="underline">Underline</button>
+                                 <button type="button" class="btn btn-outline-secondary rounded-0" title="Line Through Text" data-command="strikeThrough">Line Through</button>
+
+                                 <button type="button" class="btn btn-outline-secondary rounded-0" title="left Text" data-command="justifyLeft"><i class="fas fa-align-left"></i></button>
+                                 <button type="button" class="btn btn-outline-secondary rounded-0" title="Center Text"  data-command="justifyCenter"><i class="fas fa-align-center"></i></button>
+                                 <button type="button" class="btn btn-outline-secondary rounded-0" title="Right Text" data-command="justifyRight"><i class="fas fa-align-right"></i></button>
+                                 <button type="button" class="btn btn-outline-secondary rounded-0" title="Justify Align Text" data-command="justifyFull"><i class="fas fa-align-justify"></i></button>
+
+
+                                 <button type="button" class="btn btn-outline-secondary rounded-0" title="Uppercase Text" onclick="uppercaseFun();">Uppercase</button>
+                                 <button type="button" class="btn btn-outline-secondary rounded-0" title="Lowercase Text" onclick="lowercaseFun();">Lowercase</button>
+                                 <button type="button" class="btn btn-outline-secondary rounded-0" title="Capitalize Text" onclick="capitalizeFun();">Capitalize</button>
+
+
+                                 <button type="button" class="btn btn-outline-secondary rounded-0" title="Order List Text" data-command="insertOrderedList"><i class="fas fa-list-ol"></i></button>
+                                 <button type="button" class="btn btn-outline-secondary rounded-0" title="Unorder List Text" data-command="insertUnorderedList"><i class="fas fa-list-ul"></i></button>
+
+                                 <button type="button" class="btn btn-outline-secondary rounded-0" title="Select All" data-command="selectAll"><i class="fas fa-check"></i></button>
+                                 <button type="button" class="btn btn-outline-secondary rounded-0" title="Backspace" data-command="delete"><i class="fas fa-backspace"></i></button>
+
+                                 <button type="button" class="btn btn-outline-secondary rounded-0" title="Copy" data-command="copy"><i class="fas fa-copy"></i></button>
+                                 <button type="button" class="btn btn-outline-secondary rounded-0" title="Cut" data-command="cut"><i class="fas fa-cut"></i></button>
+                                 <button type="button" class="btn btn-outline-secondary rounded-0" title="Paste" data-command="paste"><i class="fas fa-paste"></i></button>
+
+
+                                 <button type="button" class="btn btn-outline-secondary rounded-0" title="Undo" data-command="redo"><i class="fas fa-redo"></i></button>
+                                 <button type="button" class="btn btn-outline-secondary rounded-0" title="Redo" data-command="undo"><i class="fas fa-undo"></i></button>
+
+                                 <button type="button" class="btn btn-outline-secondary rounded-0" title="Link" data-command="createLink"><i class="fas fa-link"></i></button>
+                                 <button type="button" class="btn btn-outline-secondary rounded-0" title="Unlink" data-command="unlink"><i class="fas fa-unlink"></i></button>
+
+                                 <button type="button" class="btn btn-outline-secondary rounded-0" title="Image" data-command="insertImage"><i class="fas fa-image"></i></button>
+
+                                 <select name="" id="" class="btn btn-outline-secondary" data-command="foreColor">
+                                        <option value="black">Black</option>
+                                        <option value="red">Red</option>
+                                        <option value="green">Green</option>
+                                        <option value="blue">Blue</option>
+                                 </select>
+
+
+                                 <button type="button" class="btn btn-outline-secondary rounded-0" title="Clear Text" data-command="myClearText">Clear</button>
+                        </div>
+                </div>
+
+                <div class="row">
+                        <div class="col-md-12">
+                                <form action="" method="">
+                                        <div class="form-group">
+                                                <!-- method 1 -->
+                                                <!-- <textarea name="article" id="textarea"  rows="15" class="form-control shadow" placeholder="Write something...."></textarea> -->
+
+                                                <!-- method 2 -->
+                                                <!-- step 1 -->
+                                                <!-- contenteditable="true" = working like textarea tag  / spellcheck="false" = destroy spellingcheck -->
+                                                <!-- <div id="divArea" class="divArea" contenteditable="true" spellcheck="false">     -->
+                                                        <!-- Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id, dignissimos provident corporis temporibus voluptate recusandae ipsa aut tempora reprehenderit? -->
+                                                        <!-- Architecto repellendus saepe earum non, recusandae natus modi laboriosam? Mollitia, porro? -->
+                                                        <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus dolor beatae pariatur qui nam non voluptate magni ullam excepturi ut fugiat vel suscipit, -->
+                                                        <!-- voluptas explicabo accusantium molestiae magnam nemo. Cum! -->
+                                                <!-- </div> -->
+
+                                                <!-- step 2 -->
+                                                <div id="divArea" class="divArea"></div>
+                                        </div>
+
+                                        <!--
+                                                diferences textarea and div
+                                                textarea = pure codes when copy
+                                                div = accepted all when copy
+
+                                        -->
+
+                                        <div class="text-end">
+                                                <button type="button" class="btn btn-secondary">Cancel</button>
+                                                <button type="button" class="btn btn-primary">Submit</button>
+                                        </div>
+                                </form>
+                        </div>
+                </div>
+        </div>
+
+
+
+
+        <!-- custom css and js -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+        <!-- custom js -->
+        <script src="./app.js" type="text/javascript"></script>
+</body>
+</html>

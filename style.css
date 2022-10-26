@@ -1,0 +1,52 @@
+*{
+        box-sizing: border-box;
+}
+
+body {
+        font-family: sans-serif;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+
+h4 {
+        text-align: center;
+        color: steelblue;
+}
+
+button {
+        margin: 20px 10px;
+}
+
+button:hover {
+        background-color: steelblue !important;
+}
+
+textarea {
+        border-color: steelblue;
+        padding: 10px;
+        resize: none;
+        overflow-y: scroll;
+}
+
+/* method 2 */
+#divArea {
+        width: 100%;
+        min-height: 200px;
+        max-height: 400px; /*restrist text box area*/
+        border: 1px solid steelblue;
+        padding: 10px;
+        text-align: justify; /*it destroy spac when copy as div tag*/
+
+        /* only work in textarea tag */
+        resize: vertical;
+        /* resize: horizontal; */
+        /* resize: both; */
+
+        overflow-y: scroll;
+}
+
+#divArea:focus {
+        outline: none;
+}
